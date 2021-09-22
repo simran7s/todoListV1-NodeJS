@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What day?</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
+<%- include("header") %> 
 
 <body>
     <div class="box" id="heading">
-        <h1><%= dayOfWeek %></h1>
+        <h1><%= listTitle %></h1>
     </div>
 
     <div class="box">
@@ -24,18 +14,13 @@
         </div>
         <% } %>
 
-        <form class="item" action="/" method="post">
+        <form class="item" action="<%= route %>" method="post">
             <input type="text" name="newItem" placeholder="New Task" autocomplete="off">
             <button type="submit">+</button>
         </form>
     </div>
 
-
-
-
-   
-
     <script src="../app.js"></script>
 </body>
 
-</html>
+<%- include("footer") %> 
