@@ -1,11 +1,17 @@
 
 const express = require("express")
 const app = express()
+
 // Items that will be added to ToDo List
 let items = ["Buy food", "Make food", "Eat food"]
+
+
 // No need for requiring ejs
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }))
+
+// Telling app the location of our static files(in public folder)
+app.use(express.static("public"))
 
 app.get("/", function (req, res) {
     // res.sendFile(__dirname + "/index.html")

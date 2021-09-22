@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What day?</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-     
-    <h1><%= dayOfWeek %> Todo List </h1>
-   
 
-    <ul>
-        
+<body>
+    <div class="box" id="heading">
+        <h1><%= dayOfWeek %></h1>
+    </div>
+
+    <div class="box">
         <!-- FOR LOOP for adding a new item each time one is added -->
         <% for( let i = 0; i < newListItems.length; i++ ) { %>
-            <li> <%=newListItems[i]%> </li> 
+            <div class="item">
+            <input type="checkbox">
+            <p><%=  newListItems[i] %> </p>
+        </div>
         <% } %>
-    </ul>
 
-    
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Task" autocomplete="off">
+            <button type="submit">+</button>
+        </form>
+    </div>
 
-    <form action="/" method="post">
-        <input type="text" name="newItem">
-        <button type="submit">Add Task</button>
-    </form>
+
+
+
+   
 
     <script src="../app.js"></script>
 </body>
+
 </html>
